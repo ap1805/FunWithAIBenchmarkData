@@ -2,10 +2,13 @@
 # Bill Nicholson
 # nicholdw@ucmail.uc.edu
 
+from ssl import ALERT_DESCRIPTION_UNKNOWN_PSK_IDENTITY
 from readingLevelPackage.readingLevel import Reading_Level
 from utilitiesPackage.utilities import *
 from utilitiesPackage.CSV_Utilities import *
 from PDFPackage.PDFUtilities import *
+from visualizationPackage import visualizationFunctions
+import visualizationPackage
 
 if __name__ == "__main__":
 
@@ -60,3 +63,15 @@ if __name__ == "__main__":
     for key in reading_level_indices.keys():
         print(key, ":", reading_level_indices[key])
     """
+    def visualize():
+        folder_path = './dataPackage/MMLU/data'
+        df = visualizationFunctions.load_data_from_folder(folder_path)
+        print(df.head())
+        answer_counts = visualizationFunctions.calculate_correct_answer_frequencies(df)
+        print(answer_counts)
+        if not answer_counts.empty:
+            visualizationFunctions.visualize_answer_frequencies(answer_counts)
+        else:
+            print("No valid answer data to visualize")
+    visualize()
+  

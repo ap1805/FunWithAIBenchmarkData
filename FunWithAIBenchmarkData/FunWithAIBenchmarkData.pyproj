@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>FunWithAIBenchmarkData</Name>
     <RootNamespace>FunWithAIBenchmarkData</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.9</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,12 @@
     <Compile Include="utilitiesPackage\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="visualizationPackage\visualizationFunctions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="visualizationPackage\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dataPackage\" />
@@ -59,6 +66,7 @@
     <Folder Include="PDFPackage\" />
     <Folder Include="readingLevelPackage\" />
     <Folder Include="utilitiesPackage\" />
+    <Folder Include="visualizationPackage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="dataPackage\MMLU\data\abstract_algebra_test.csv" />
@@ -118,6 +126,11 @@
     <Content Include="dataPackage\MMLU\data\us_foreign_policy_test.csv" />
     <Content Include="dataPackage\MMLU\data\virology_test.csv" />
     <Content Include="dataPackage\MMLU\data\world_religions_test.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.12" />
+    <InterpreterReference Include="Global|PythonCore|3.12-32-32" />
+    <InterpreterReference Include="Global|PythonCore|3.9" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
